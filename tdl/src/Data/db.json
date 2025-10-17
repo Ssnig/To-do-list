@@ -1,0 +1,17 @@
+{
+  "todolist":[
+{
+    "id":1,
+    "task":"Clean Bedroom",
+    "completed":false
+  },{
+    "id":2,
+    "task":"Wash Clothes",
+    "completed":false
+  }, {
+    "id":3,
+    "task":"Learn React",
+    "completed":false
+  }
+]
+}
