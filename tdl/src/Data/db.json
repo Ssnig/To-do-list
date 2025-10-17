@@ -7,10 +7,14 @@
   },{
     "id":2,
     "task":"Wash Clothes",
-    "completed":false
+    "completed":true
   }, {
     "id":3,
     "task":"Learn React",
+    "completed":false
+  },{
+    "id":4,
+    "task":"Grocery Shopping",
     "completed":false
   }
 ]
