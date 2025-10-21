@@ -1,26 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import List from './components/List';
+import { api } from './api/apiResource';
+import { v4 as uuid } from 'uuid';
 
 
 function App() {
-  const fetchedata = async () => {
-    const data = await fetch('http://localhost:4000/todolist ')
-      .then(response => response.json())
-      .catch(error => console.log("Error", error))
-    console.log(data);
+  const [task, setTask] = useState([]);
+  const fetchData = async () => {
+    const res = await api.get('/todolist');
+    setTask(res.data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [task])
+
+  const submitTask = async (userTask) => {
+    const data ={
+      id:uuid(),
+      task:userTask,
+      complete:false,
+    };
+    await api.post('/todolist',data);
+    
+  }
+  const deleteTask = async  (task_id) => {
+    await api.delete(`/todolist/${task_id}`);
+    
+  }
+  const updateTask = async (task_id,complete)=>{
+    await api.patch(`/todolist/${task_id}`,{complete});
   }
   
-  useEffect(() => {
-    fetchedata();
-  }, [])
 
   return (
     <div className='mx-auto  w-50' >
+      <Form submitTask={submitTask} />
 
-      <List />
+      <List task={task} deleteTask={deleteTask} updateTask={updateTask} />
 
     </div>
   );
