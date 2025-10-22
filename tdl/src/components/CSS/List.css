@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap");
+
+.list-wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.list-header h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: #2f2a28;
+}
+
+.list-header p {
+  margin: 0.35rem 0 0;
+  color: rgba(47, 42, 40, 0.65);
+  font-size: 0.95rem;
+}
+
+.task-collection {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.task-card {
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9));
+  border-radius: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px rgba(255, 111, 0, 0.18);
+}
+
+.task-card.complete {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+  border: 1px solid rgba(255, 138, 61, 0.16);
+  opacity: 0.85;
+}
+
+.task-card.complete h4 {
+  text-decoration: line-through;
+  color: rgba(47, 42, 40, 0.55);
+}
+
+.task-body {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.task-toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 138, 61, 0.1);
+  cursor: pointer;
+}
+
+.task-toggle input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.task-toggle .checkmark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 111, 0, 0.55);
+  transition: all 0.2s ease;
+}
+
+.task-toggle input:checked + .checkmark {
+  background: linear-gradient(135deg, #ff8a3d, #ff6f00);
+  border-color: transparent;
+  box-shadow: 0 0 0 4px rgba(255, 111, 0, 0.2);
+}
+
+.task-copy h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2f2a28;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+.task-copy p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(47, 42, 40, 0.6);
+}
+
+.delete-btn {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--orange-bold);
+  background: rgba(255, 138, 61, 0.12);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: rotate(-12deg);
+  background: rgba(255, 111, 0, 0.3);
+}
+
+.empty-state {
+  justify-items: center;
+  text-align: center;
+}
+
+.empty-state .task-body {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.card-emoji {
+  font-size: 2rem;
+}
+
+@media (max-width: 640px) {
+  .task-body {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .delete-btn {
+    justify-self: end;
+  }
+
+  .task-toggle {
+    justify-self: start;
+  }
+}

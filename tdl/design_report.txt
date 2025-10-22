@@ -1,0 +1,24 @@
+Tea Break To-Do Lounge Redesign - Change Log
+--------------------------------------------
+Date: 2025-10-21
+
+1. UI Transformation
+   - Rebuilt the main layout with a lounge-inspired shell, orange and white stripes, and a two-column composition for ambience (src/App.jsx, src/App.css).
+   - Added a decorative shelf vignette with kettle, steam, and chair accents to reinforce the requested theme (src/App.jsx, src/App.css).
+
+2. New Placeholder Utilities
+   - Introduced guided placeholders for an image drop, focus timer, and calendar planning space (src/App.jsx, src/App.css).
+   - Expanded the creation form with headline, calendar, timer, and notes placeholders to preview future features (src/components/Form.jsx, src/components/CSS/form.css).
+
+3. Task Interaction Enhancements
+   - Applied GSAP powered animations so task cards animate into place after state changes (src/App.jsx).
+   - Restyled tasks with shelf inspired cards, a custom toggle, and empty state copy (src/components/List.jsx, src/components/Cart.jsx, src/components/CSS/List.css).
+   - Corrected checkbox handling and delete affordance for better accessibility (src/components/Cart.jsx).
+
+4. Data Flow Improvements
+   - Stopped the previous fetch loop and now refresh tasks after create, update, and delete, while blocking blank submissions (src/App.jsx, src/components/Form.jsx).
+
+5. Tooling
+   - Added the GSAP dependency for animation support (package.json).
+
+Author: Codex CLI assistant (GPT-5)

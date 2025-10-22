@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+
+.form-wrapper {
+  position: relative;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 233, 0.95));
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: inset 0 12px 24px rgba(255, 255, 255, 0.65), 0 18px 32px rgba(255, 111, 0, 0.18);
+}
+
+.task-form {
+  display: grid;
+  gap: 1.75rem;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+.form-header h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: #2f2a28;
+  font-weight: 700;
+}
+
+.form-header p {
+  margin: 0.65rem 0 0;
+  color: rgba(47, 42, 40, 0.7);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.field-headline {
+  grid-column: span 2;
+}
+
+.field {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.field span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(47, 42, 40, 0.75);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: none;
+  border-radius: 1.25rem;
+  padding: 0.85rem 1.1rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 8px 14px rgba(208, 208, 208, 0.35), 0 1px 0 rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  color: #2f2a28;
+  resize: vertical;
+  min-height: 52px;
+}
+
+.field textarea {
+  min-height: 120px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(255, 111, 0, 0.45);
+  box-shadow: 0 0 0 6px rgba(255, 111, 0, 0.12);
+}
+
+.form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.field-error {
+  color: #b33a0a;
+  font-weight: 600;
+}
+
+.primary-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.85rem;
+  background: linear-gradient(135deg, #ff8a3d, #ff6f00);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 16px 28px rgba(255, 111, 0, 0.35);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(255, 111, 0, 0.4);
+}
+
+.btn-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .field-headline {
+    grid-column: span 1;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
